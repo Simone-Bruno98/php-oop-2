@@ -26,3 +26,26 @@
     ];
 
 
+// 1) Recupera l’elenco delle sale con relative informazioni, facendo particolare attenzione alle informazioni aggiuntive per le sale immersive.
+        var_dump($sale);
+
+
+// 2) Recuperare la capienza totale del cinema considerando tutte le sale a disposizione.
+        $capacita = 0;
+        foreach ($sale as $value) {
+            $capacita += $value -> getPosti();
+        }
+        
+        var_dump($capacita);
+        
+    
+//3) Stabilito un giorno e un film, recuperare quante proiezioni totali di quel film ci saranno.
+        $numSpettacoli = 0;
+        $giorno = "1 marzo 2022";
+        $pellicola = $film[1];
+    
+        foreach($spettacoli as $value){
+            if(($giorno == $value->getData()) && ($pellicola == $value ->getTitolo())){
+                $numSpettacoli = $value->getOra();
+            }
+        };
